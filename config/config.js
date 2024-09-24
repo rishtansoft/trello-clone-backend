@@ -2,9 +2,9 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    username: 'your_db_username',
-    password: 'your_db_password',
-    database: 'trello_clone',
+    username: 'postgres',
+    password: '1',
+    database: 'trello_clone1',
     host: '127.0.0.1',
     dialect: 'postgres'
   },

@@ -10,6 +10,7 @@ const models = {
   Comment: require('./comment')(sequelize),
 };
 
+// Associations o'rnatish
 Object.keys(models).forEach(modelName => {
   if ('associate' in models[modelName]) {
     models[modelName].associate(models);
