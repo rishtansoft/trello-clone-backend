@@ -11,4 +11,30 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/boards', boardRoutes);
 
+// swagger
+const swaggerJsdoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+// Swagger options
+const swaggerOptions = {
+    swaggerDefinition: {
+      openapi: '3.0.0',
+      info: {
+        title: 'API Documentation',
+        version: '1.0.0',
+        description: 'API Information',
+      },
+      servers: [
+        {
+          url: 'http://localhost:5000',
+        },
+      ],
+    },
+    apis: ['./swagger/auth.js', './swagger/board.js'],
+  };
+
+  // Swagger docs va UI ni o'rnatish
+const swaggerDocs = swaggerJsdoc(swaggerOptions);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
 module.exports = app;
