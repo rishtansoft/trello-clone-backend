@@ -33,3 +33,28 @@ exports.createBoard = async (req, res) => {
     res.status(500).json({ message: 'Server xatosi' });
   }
 };
+
+exports.getUserBoards = async (req, res) => {
+    try {
+      const userId = req.user.id; // Auth middleware orqali foydalanuvchi ID sini olamiz
+  
+      // Foydalanuvchiga tegishli barcha boardlarni olish
+      const boards = await Board.findAll({
+        where: {
+          userId: userId,
+        },
+      });
+  
+      if (boards.length === 0) {
+        return res.status(404).json({ message: 'Sizda hech qanday board mavjud emas' });
+      }
+  
+      res.status(200).json({
+        message: 'Foydalanuvchiga tegishli boardlar',
+        boards: boards,
+      });
+    } catch (error) {
+      console.error('Boardlarni olishda xatolik:', error);
+      res.status(500).json({ message: 'Server xatosi' });
+    }
+  };

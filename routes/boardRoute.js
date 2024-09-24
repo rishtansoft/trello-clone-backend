@@ -5,6 +5,8 @@ const authMiddleware = require('../middlewares/authMiddleware'); // Auth tekshir
 
 // Board yaratish uchun route
 router.post('/create', authMiddleware, boardController.createBoard);
-// router.post('/create', boardController.createBoard);
+
+// Foydalanuvchiga tegishli boardlarni olish
+router.get('/my-boards', authMiddleware, boardController.getUserBoards);
 
 module.exports = router;

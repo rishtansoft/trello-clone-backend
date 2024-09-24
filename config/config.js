@@ -4,7 +4,7 @@ module.exports = {
   development: {
     username: 'postgres',
     password: '1',
-    database: 'trello_clone1',
+    database: 'trello_clone',
     host: '127.0.0.1',
     dialect: 'postgres'
   },
