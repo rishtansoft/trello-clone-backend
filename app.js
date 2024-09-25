@@ -15,6 +15,8 @@ app.use('/api/boards', boardRoutes);
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
+app.options('*', cors()); // Allow preflight requests for all routes
+
 // Swagger options
 const swaggerOptions = {
     swaggerDefinition: {
