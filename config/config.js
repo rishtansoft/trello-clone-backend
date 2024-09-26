@@ -2,8 +2,8 @@ require('dotenv').config();
 
 module.exports = {
   development: {
-    username: 'crm',
-    password: 'crm2024',
+    username: 'postgres',
+    password: '1',
     database: 'trello_clone',
     host: '127.0.0.1',
     dialect: 'postgres'

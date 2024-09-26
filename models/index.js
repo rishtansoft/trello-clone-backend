@@ -6,6 +6,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 const models = {
   User: require('./user')(sequelize),
   Board: require('./board')(sequelize),
+  BoardInvite: require('./boardInvite')(sequelize),
   Task: require('./task')(sequelize),
   Comment: require('./comment')(sequelize),
 };

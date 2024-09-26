@@ -34,5 +34,9 @@ module.exports = (sequelize) => {
     },
   });
 
+  User.associate = (models) => {
+    User.belongsToMany(models.Board, { through: 'UserBoards' }); // Ko'p-to-kop aloqani o'rnatish
+  };
+
   return User;
 };

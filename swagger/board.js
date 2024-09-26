@@ -41,3 +41,65 @@
  *       404:
  *         description: "Board topilmadi"
  */
+
+
+/**
+ * @swagger
+ * /api/board/invite-user:
+ *   post:
+ *     summary: "Boardga foydalanuvchini taklif qilish"
+ *     description: "Foydalanuvchiga email orqali boardga taklif yuboriladi."
+ *     tags: [Board]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: "invitee@example.com"
+ *               boardId:
+ *                 type: string
+ *                 example: "48db-b9e3-9c9534a36398"
+ *     responses:
+ *       200:
+ *         description: "Taklif muvaffaqiyatli yuborildi"
+ *       404:
+ *         description: "Board topilmadi yoki foydalanuvchi topilmadi"
+ *       500:
+ *         description: "Server xatosi"
+ */
+
+
+/**
+ * @swagger
+ * /api/board/remove-user:
+ *   delete:
+ *     summary: "Boarddan foydalanuvchini o'chirish"
+ *     description: "Foydalanuvchini emaili orqali boarddan o'chiradi."
+ *     tags: [Board]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: "user@example.com"
+ *               boardId:
+ *                 type: string
+ *                 example: "48db-b9e3-9c9534a36398"
+ *     responses:
+ *       200:
+ *         description: "Foydalanuvchi boarddan muvaffaqiyatli o'chirildi"
+ *       404:
+ *         description: "Board topilmadi yoki foydalanuvchi topilmadi"
+ *       400:
+ *         description: "Foydalanuvchi boardda mavjud emas"
+ *       500:
+ *         description: "Server xatosi"
+ */
