@@ -118,3 +118,102 @@
  *       500:
  *         description: "Serverda xatolik yuz berdi"
  */
+
+
+/**
+ * @swagger
+ * /api/tasks/{taskId}:
+ *   put:
+ *     summary: "Taskni yangilash"
+ *     description: "Taskning nomi, izohi, statusi, muhimlik darajasi, vaqt va odamni yangilash uchun universal API."
+ *     tags: [Tasks]
+ *     parameters:
+ *       - in: path
+ *         name: taskId
+ *         required: true
+ *         description: "Yangilanishi kerak bo'lgan task IDsi"
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *                 example: "New task title"
+ *               description:
+ *                 type: string
+ *                 example: "Updated task description"
+ *               status:
+ *                 type: string
+ *                 example: "Done"
+ *               priority:
+ *                 type: string
+ *                 example: "High"
+ *               dueDate:
+ *                 type: string
+ *                 format: date-time
+ *                 example: "2024-12-31T23:59:59Z"
+ *               assignedTo:
+ *                 type: string
+ *                 example: "user-uuid"
+ *               commentText:
+ *                 type: string
+ *                 example: "This is a new comment on the task."
+ *     responses:
+ *       200:
+ *         description: "Task muvaffaqiyatli yangilandi"
+ *       404:
+ *         description: "Task topilmadi"
+ *       500:
+ *         description: "Serverda xatolik yuz berdi"
+ */
+
+/**
+ * @swagger
+ * /api/tasks/{taskId}/comments:
+ *   get:
+ *     summary: "Taskdagi barcha izohlarni olish"
+ *     description: "Berilgan task ID uchun barcha izohlarni qaytaradi."
+ *     tags: [Tasks]
+ *     parameters:
+ *       - in: path
+ *         name: taskId
+ *         required: true
+ *         description: "Izohlar olingan task IDsi"
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: "Taskdagi izohlar ro'yxati"
+ *       404:
+ *         description: "Izohlar topilmadi"
+ *       500:
+ *         description: "Serverda xatolik yuz berdi"
+ */
+
+/**
+ * @swagger
+ * /api/tasks/{taskId}:
+ *   delete:
+ *     summary: "Taskni o'chirish"
+ *     description: "Berilgan task ID asosida taskni o'chirish."
+ *     tags: [Tasks]
+ *     parameters:
+ *       - in: path
+ *         name: taskId
+ *         required: true
+ *         description: "O'chirilishi kerak bo'lgan task IDsi"
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: "Task muvaffaqiyatli o'chirildi"
+ *       404:
+ *         description: "Task topilmadi"
+ *       500:
+ *         description: "Serverda xatolik yuz berdi"
+ */

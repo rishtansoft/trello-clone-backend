@@ -35,7 +35,7 @@ const swaggerOptions = {
         },
       ],
     },
-    apis: ['./swagger/auth.js', './swagger/board.js', './swagger/tasks.js'],
+    apis: ['./swagger/auth.js', './swagger/board.js', './swagger/tasks.js', './swagger.comments.js'],
   };
 
   // Swagger docs va UI ni o'rnatish
