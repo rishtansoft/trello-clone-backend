@@ -1,13 +1,14 @@
 // Import necessary modules
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
-
+const cors = require('cors');
 // Initialize Express app
 const app = express();
 const PORT = 5050;
 
 // Middleware to parse JSON
 app.use(express.json());
+app.use(cors())
 
 // Initialize Sequelize
 const sequelize = new Sequelize('postgres://crm:crm2024@localhost:5432/bookstore', {
