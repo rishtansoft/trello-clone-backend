@@ -2,12 +2,12 @@ const { Sequelize, DataTypes } = require('sequelize');
 const { faker } = require('@faker-js/faker');
 
 // Initialize Sequelize
-const sequelize = new Sequelize('postgres://postgres:1@localhost:5432/bookstore', {
+const sequelize = new Sequelize('postgres://crm:crm2024@localhost:5432/bookstore', {
   dialect: 'postgres',
 });
 
 // Define Book model
-const Book = sequelize.define('Books', {
+const Book = sequelize.define('Book', {
   title: {
     type: DataTypes.STRING,
     allowNull: false,

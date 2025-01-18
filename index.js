@@ -4,13 +4,13 @@ const { Sequelize, DataTypes } = require('sequelize');
 
 // Initialize Express app
 const app = express();
-const PORT = 3000;
+const PORT = 5050;
 
 // Middleware to parse JSON
 app.use(express.json());
 
 // Initialize Sequelize
-const sequelize = new Sequelize('postgres://postgres:1@localhost:5432/bookstore', {
+const sequelize = new Sequelize('postgres://crm:crm2024@localhost:5432/bookstore', {
   dialect: 'postgres',
 });
 
